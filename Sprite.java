@@ -1,5 +1,8 @@
 package MissileSpaceShip;
 
+//In the next example we add another sprite type to our example-a missile//
+//The missiles are launched with the space key//
+//The Sprite class shares common code from the Missiile and SpaceShip classes//
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -18,6 +21,9 @@ public class Sprite {
     this.y = y;
     visible = true;
   }
+  
+  //The constructor initiates the x and y coordinates and the visible variable//
+  //This is similar to the previous Sprite class I have created//
   
   protected void loadImage(String imageName) {
     

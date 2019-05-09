@@ -61,6 +61,7 @@ public class Board extends JPanel implements ActionListener {
 					  missile.getY(), this);
 		}
 	}
+//In the doDrawing() method, we draw the craft and all the available missiles//
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -72,7 +73,43 @@ public class Board extends JPanel implements ActionListener {
 	}
 	
 	private void updateMissiles() {
-		List<Mis
+		List<Missile> missiles = spaceShip.getMissiles();
+		
+		for (int i = 0; i < misiles.size(); i++) {
+			Missile missile = missiles.get(i);
+			
+			if (missiles.isVisible()) {
+				
+				missile.move();
+			} else {
+				missiles.remove(i);
+			}
+		}
+	}
+
+//In the updateMissiles() method we parse all missiles from the missiles list//
+//Depending on what the isVisible() method returns, we either move the missile or remove it from the container//
+	
+	private void updateSpaceShip() {
+		
+		spaceShip.move();
+	}
+	
+	private class TAdapter extends keyAdapter {
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			spaceShip.keyReleased(e);
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			spaceShip.keyPressedd(e);
+		}
+	}
+}
+			
+			
 		
 		
 			
